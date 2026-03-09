@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Security Analyzer</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.container{
+padding:40px;
+}
+
+.box{
+background:#f1f5f9;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+width:70%;
+}
+
+button{
+padding:10px 20px;
+margin-top:10px;
+background:#6366f1;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4f46e5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">Speech2Logic AI</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Speech AI</a></li>
+<li><a href="code_editor.html">Code Editor</a></li>
+<li><a href="blind_mode.html">Blind IDE</a></li>
+<li><a href="meeting_ai.html">Meeting AI</a></li>
+<li><a href="security.html">Security</a></li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Security Analyzer</h1>
+
+<p>This module checks developer code for basic security issues.</p>
+
+<textarea id="code" rows="10" cols="80" placeholder="Paste code here"></textarea>
+
+<br>
+
+<button onclick="checkSecurity()">Analyze Security</button>
+
+<div class="box">
+
+<h3>Security Report</h3>
+
+<p id="report"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function checkSecurity(){
+
+let code=document.getElementById("code").value;
+
+let report="";
+
+if(code.includes("password")){
+report+="⚠ Hardcoded password detected\n";
+}
+
+if(code.includes("eval(")){
+report+="⚠ Use of eval() may cause security risk\n";
+}
+
+if(report===""){
+report="✅ No basic security issues detected";
+}
+
+document.getElementById("report").innerText=report;
+
+}
+
+</script>
+
+</body>
+</html>

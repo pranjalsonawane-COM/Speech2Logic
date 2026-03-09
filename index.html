@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Speech2Logic AI IDE</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#020617;
+padding:15px 40px;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#6366f1;
+}
+
+/* MAIN */
+
+.container{
+padding:40px;
+text-align:center;
+}
+
+textarea{
+width:70%;
+height:120px;
+font-size:16px;
+padding:12px;
+border-radius:6px;
+border:none;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+button{
+padding:12px 22px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+background:#6366f1;
+border:none;
+color:white;
+border-radius:6px;
+}
+
+button:hover{
+background:#4f46e5;
+}
+
+/* MIC ANIMATION */
+
+.mic-listening{
+animation:pulse 1s infinite;
+background:#ef4444;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(239,68,68,0.7)}
+70%{box-shadow:0 0 0 15px rgba(239,68,68,0)}
+100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}
+}
+
+/* RESULT BOX */
+
+.box{
+background:#1e293b;
+margin-top:20px;
+padding:20px;
+border-radius:10px;
+width:70%;
+margin-left:auto;
+margin-right:auto;
+text-align:left;
+}
+
+/* CODE */
+
+pre{
+background:#111827;
+color:#22c55e;
+padding:20px;
+border-radius:8px;
+overflow:auto;
+font-family:monospace;
+font-size:14px;
+}
+
+.center-btn{
+text-align:center;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">Speech2Logic AI</div>
+
+<nav>
+<ul>
+
+<li><a href="index.html">Speech AI</a></li>
+<li><a href="code_editor.html">Code Editor</a></li>
+<li><a href="blind_mode.html">Blind IDE</a></li>
+<li><a href="meeting_ai.html">Meeting AI</a></li>
+<li><a href="analytics.html">AI Analytics</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="ai_tutor.html">AI Tutor</a></li>
+<li><a href="learning.html">Learning Module</a></li>
+
+
+
+
+
+
+</ul>
+</nav>
+
+</header>
+
+
+
+<div class="container">
+
+<h1>Speech2Logic AI IDE</h1>
+
+<button id="micBtn"
+onclick="startSpeech(); speakGuide('Listening started. Please say your programming problem like prime number program.')">
+🎤 Start Speaking
+</button>
+
+<h2>Speech Input</h2>
+
+<textarea 
+id="speechInput" 
+placeholder="Example: prime number program"
+aria-label="Speech input area for programming request">
+</textarea>
+
+<br>
+
+<button 
+onclick="generateLogic(); speakGuide('Generating program logic and explanation')">
+⚡ Generate Logic
+</button>
+
+</div>
+
+
+<div class="box">
+<h3>Detected Intent</h3>
+<p id="intent"></p>
+</div>
+
+<div class="box">
+<h3>AI Decision</h3>
+<p id="decision"></p>
+</div>
+
+<div class="box">
+<h3>Generated Logic</h3>
+<pre id="logic"></pre>
+</div>
+
+<div class="center-btn">
+<button onclick="speakExplanation()">🔊 Speak Explanation</button>
+</div>
+
+<div class="box">
+<h3>AI Explanation</h3>
+<p id="explanation"></p>
+</div>
+
+
+
+</div>
+
+<script src="script.js"></script>
+<script src="visual_enhancements.js"></script>
+
+</body>
+</html>

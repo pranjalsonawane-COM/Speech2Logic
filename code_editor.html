@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>AI Code Editor</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.navbar{
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+font-size:16px;
+}
+
+.navbar a:hover{
+color:#60a5fa;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+textarea{
+width:70%;
+height:200px;
+font-size:16px;
+padding:10px;
+margin-top:20px;
+}
+
+button{
+padding:10px 18px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+background:#6366f1;
+border:none;
+color:white;
+border-radius:8px;
+}
+
+button:hover{
+background:#4f46e5;
+}
+
+.output{
+background:#d1d5db;
+color:black;
+width:70%;
+margin:auto;
+margin-top:20px;
+padding:20px;
+border-radius:8px;
+text-align:left;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+Speech2Logic AI
+</div>
+
+<nav>
+
+<a href="index.html">Speech AI</a>
+<a href="code_editor.html">AI Code Editor</a>
+<a href="blind_mode.html">Blind Developer IDE</a>
+<a href="meeting_ai.html">Meeting Analyzer</a>
+<a href="learning_mode.html">Learning Mode</a>
+<a href="analytics.html">AI Analytics</a>
+<a href="security.html">Security</a>
+
+</nav>
+
+</header>
+
+<h1>AI Code Editor</h1>
+
+<textarea id="codeInput" placeholder="Write or paste your code here..."></textarea>
+
+<br>
+
+<button onclick="runCode()">Run Code</button>
+<button onclick="downloadCode()">Download</button>
+
+<div class="output">
+<h3>Output</h3>
+<pre id="output"></pre>
+</div>
+
+<script>
+
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+function runCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let output = "";
+
+let oldLog = console.log;
+
+console.log = function(message){
+output += message + "\n";
+}
+
+try{
+eval(code);
+document.getElementById("output").innerText = output || "Code executed successfully";
+}
+catch(error){
+document.getElementById("output").innerText = error;
+}
+
+console.log = oldLog;
+
+}
+
+function downloadCode(){
+
+let code=document.getElementById("codeInput").value;
+
+let blob=new Blob([code],{type:"text/plain"});
+
+let a=document.createElement("a");
+
+a.href=URL.createObjectURL(blob);
+a.download="code.js";
+
+a.click();
+
+}
+
+</script>
+
+</body>
+</html>

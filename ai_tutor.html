@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Tutor</title>
+
+<style>
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+textarea{
+width:80%;
+height:120px;
+font-size:16px;
+padding:10px;
+border-radius:10px;
+}
+
+button{
+padding:12px 25px;
+margin-top:15px;
+font-size:18px;
+border:none;
+background:#22c55e;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+#response{
+margin-top:30px;
+padding:20px;
+background:#1e293b;
+border-radius:10px;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+text-align:left;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>AI Coding Tutor 🤖</h1>
+
+<p>Ask a coding question:</p>
+
+<textarea id="question" placeholder="Example: What is a JavaScript function?"></textarea>
+
+<br>
+
+<button onclick="askAI()">Ask AI</button>
+
+<div id="response"></div>
+
+<script>
+
+function askAI(){
+
+let q=document.getElementById("question").value;
+
+let answer="";
+
+if(q.toLowerCase().includes("function")){
+answer="A function is a reusable block of code that performs a task.\n\nExample:\nfunction add(a,b){ return a+b; }";
+}
+
+else if(q.toLowerCase().includes("variable")){
+answer="A variable stores data values.\n\nExample:\nlet name='John';";
+}
+
+else if(q.toLowerCase().includes("loop")){
+answer="A loop repeats code multiple times.\n\nExample:\nfor(let i=0;i<5;i++){ console.log(i); }";
+}
+
+else{
+answer="AI Tutor is still learning. Try asking about variables, loops, or functions.";
+}
+
+document.getElementById("response").innerText=answer;
+
+}
+
+</script>
+
+</body>
+</html>

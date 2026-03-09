@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Module</title>
+
+<style>
+
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+margin:0;
+}
+
+.header{
+background:#020617;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+}
+
+.container{
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+margin:20px auto;
+width:60%;
+border-radius:10px;
+}
+
+button{
+padding:10px 18px;
+background:#6366f1;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4f46e5;
+}
+
+pre{
+background:#111827;
+padding:15px;
+border-radius:8px;
+color:#22c55e;
+text-align:left;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Speech2Logic Learning Module
+</div>
+
+<div class="container">
+
+<h1>Learn Programming with AI</h1>
+<p>This module teaches coding logic with AI explanations.</p>
+
+<!-- Python Lesson -->
+
+<div class="card">
+
+<h2>Python Loop Example</h2>
+
+<pre>
+for i in range(5):
+    print("Hello Developer")
+</pre>
+
+<p>This loop prints text 5 times.</p>
+
+<button onclick="speakLesson()">🔊 Listen Explanation</button>
+
+</div>
+
+<!-- If Condition -->
+
+<div class="card">
+
+<h2>Python If Condition</h2>
+
+<pre>
+age = 18
+
+if age >= 18:
+    print("Eligible to vote")
+</pre>
+
+<p>This condition checks if age is greater than or equal to 18.</p>
+
+<button onclick="speakCondition()">🔊 Listen Explanation</button>
+
+</div>
+
+</div>
+
+<script>
+
+function speakLesson(){
+
+let text = "This Python loop runs five times and prints hello developer.";
+
+let speech = new SpeechSynthesisUtterance(text);
+
+speech.rate = 1;
+
+speech.pitch = 1;
+
+speech.volume = 1;
+
+speechSynthesis.speak(speech);
+
+}
+
+function speakCondition(){
+
+let text = "This if condition checks if the age is greater than or equal to eighteen.";
+
+let speech = new SpeechSynthesisUtterance(text);
+
+speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+</html>

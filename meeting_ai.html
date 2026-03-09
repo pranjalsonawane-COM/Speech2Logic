@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Developer Meeting Analyzer</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.container{
+padding:40px;
+}
+
+button{
+padding:10px 20px;
+margin:10px;
+background:#6366f1;
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4f46e5;
+}
+
+.box{
+background:#f1f5f9;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+width:70%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">Speech2Logic AI</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Speech AI</a></li>
+<li><a href="code_editor.html">Code Editor</a></li>
+<li><a href="blind_mode.html">Blind IDE</a></li>
+<li><a href="meeting_ai.html">Meeting AI</a></li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Developer Meeting Analyzer</h1>
+
+<button onclick="startRecording()">Start Recording</button>
+<button onclick="stopRecording()">Stop Recording</button>
+
+<p id="status"></p>
+
+<div class="box">
+<h3>Live Transcript</h3>
+<p id="transcript"></p>
+</div>
+
+<div class="box">
+<h3>AI Meeting Summary</h3>
+<p id="summary"></p>
+</div>
+
+</div>
+
+<script>
+
+let recognition;
+let transcriptText="";
+
+function startRecording(){
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+recognition = new SpeechRecognition();
+
+recognition.continuous=true;
+recognition.lang="en-US";
+
+document.getElementById("status").innerText="Recording meeting...";
+
+recognition.onresult=function(event){
+
+let text=event.results[event.results.length-1][0].transcript;
+
+transcriptText += text + " ";
+
+document.getElementById("transcript").innerText = transcriptText;
+
+};
+
+recognition.start();
+
+}
+
+function stopRecording(){
+
+recognition.stop();
+
+document.getElementById("status").innerText="Meeting recording saved";
+
+generateSummary();
+
+}
+
+function generateSummary(){
+
+let summary="Meeting discussed development tasks and collaboration. Important decisions and ideas were shared by the team.";
+
+document.getElementById("summary").innerText=summary;
+
+}
+
+</script>
+
+</body>
+</html>
